@@ -176,11 +176,17 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        
+
         /*
          * Vendor Providers
          */
-        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        JeroenG\Packager\PackagerServiceProvider::class,
+        
+        /*
+         * My Package
+         */
+        Maxbiag80\Api\ApiServiceProvider::class,
     ],
 
     /*

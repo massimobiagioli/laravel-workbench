@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "jeroen-g/laravel-packager": "^1.5",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "tymon/jwt-auth": "0.5.*"
@@ -20,11 +21,15 @@
             "database"
         ],
         "psr-4": {
+            "Maxbiag80\\Api\\": "packages/Maxbiag80/Api/src",
+            
             "App\\": "app/"
         }
     },
     "autoload-dev": {
         "psr-4": {
+            "Maxbiag80\\Api\\": "packages/Maxbiag80/Api/src",
+            
             "Tests\\": "tests/"
         }
     },
