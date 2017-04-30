@@ -12,5 +12,22 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // Ricava elenco scripts
+    $scripts = [];
+    $fileList = glob(base_path('public') . '/static/js/*.js');
+    foreach ($fileList as $file) {
+        $type = explode('.', basename($file))[0];
+        $scripts[$type] = '/static/js/' . basename($file);
+    }
+    
+    // Ricava elenco css
+    $styles = array_map(function($style) {
+        return '/static/css/' . basename($style);
+    }, glob(base_path('public') . '/static/css/*.css'));
+    
+    // Effettua render della view
+    return view('welcome', [
+        'styles' => $styles,
+        'scripts' => $scripts
+    ]);
 });
