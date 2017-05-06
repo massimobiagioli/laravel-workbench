@@ -4,8 +4,10 @@ return [
     
     /*
      * Tipo Repository
+     * -mock
+     * -eloquent
      */
-    'repositoryType' => 'mock',
+    'repositoryType' => 'eloquent',
     
     /*
      * Middlewares da utilizzare

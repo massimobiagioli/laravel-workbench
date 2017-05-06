@@ -9,7 +9,8 @@ class ApiServiceProvider extends ServiceProvider {
     const DEFAULT_CRUD_REPOSITORY_IMPL = 'mock';
 
     private static $CRUDRepositoryConfig = [
-        'mock' => 'Maxbiag80\Api\Repos\CRUDRepositoryMock'
+        'mock' => 'Maxbiag80\Api\Repos\CRUDRepositoryMock',
+        'eloquent' => 'Maxbiag80\Api\Repos\CRUDRepositoryEloquent'
     ];
 
     /**

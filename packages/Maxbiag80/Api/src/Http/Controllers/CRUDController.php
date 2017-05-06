@@ -11,9 +11,6 @@ use Maxbiag80\Api\Repos\CRUDRepository;
  */
 class CRUDController extends BaseController {
     
-    //TODO: Messaggi in lingua nei metodi di preconditions
-    //TODO: Autenticazione
-    
     private $repository;
     
     /**
@@ -160,7 +157,9 @@ class CRUDController extends BaseController {
             
             // Aggiorna elemento utilizzando il repository
             $result = $this->repository->update($modelKey, $modelId, $data);
-            
+            if ($result === null) {
+                return response('Errore aggiornamento model', 500);
+            }
             return response($result, 200); 
         } catch (Exception $ex) {
             return response($ex->getMessage(), 500);
