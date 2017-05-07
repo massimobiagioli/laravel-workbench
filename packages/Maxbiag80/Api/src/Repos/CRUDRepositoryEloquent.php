@@ -9,6 +9,8 @@ use Maxbiag80\Api\Repos\CRUDRepository;
  */
 class CRUDRepositoryEloquent implements CRUDRepository {
     
+    const DEFAULT_MODEL_NAMESPACE = '\\App\\Models';
+    
     public function __construct() {
     }
     
@@ -49,8 +51,14 @@ class CRUDRepositoryEloquent implements CRUDRepository {
     }
     
     private function getModelName($modelKey) {
-        // TODO: parametrizzare namespace di ricerca
-        return '\\App\\Models\\' . $modelKey;
+        $modelNamespaces = config('api.modelNamespaces', [self::DEFAULT_MODEL_NAMESPACE]);
+        foreach ($modelNamespaces as $modelNamespace) {
+            $className = $modelNamespace . '\\' . $modelKey;
+            if (class_exists($className)) {
+                return $className;
+            }
+        }
+        return null;
     }
     
     private function getWhereClauses($filters) {

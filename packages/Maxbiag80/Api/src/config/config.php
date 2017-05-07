@@ -12,6 +12,11 @@ return [
     /*
      * Middlewares da utilizzare
      */
-    'middlewares' => ['jwt.auth', 'jwt.refresh']
+    'middlewares' => ['jwt.auth', 'jwt.refresh'],
+    
+    /*
+     * Model namespaces
+     */
+    'modelNamespaces' => ['\\App\\Models']
     
 ];
