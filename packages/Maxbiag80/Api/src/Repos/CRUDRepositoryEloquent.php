@@ -9,6 +9,10 @@ use Maxbiag80\Api\Repos\CRUDRepository;
  */
 class CRUDRepositoryEloquent implements CRUDRepository {
     
+    //TODO: aggiungere controllo errori (modelName non trovato) ed eccezioni personalizzate
+    //TODO: aggiungere nelle configurazioni la gestione dei messaggi in lingua
+    //TODO: aggiungere scrittura su log (tenere presente anche Heroku)
+    
     const DEFAULT_MODEL_NAMESPACE = '\\App\\Models';
     
     public function __construct() {
