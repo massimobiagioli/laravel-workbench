@@ -20,6 +20,7 @@
     "redux-logger": "^3.0.1",
     "revue": "^3.0.0",
     "vue": "^2.2.6",
+    "vue-cordova": "^0.1.2",
     "vue-router": "^2.3.1"
   },
   "devDependencies": {
